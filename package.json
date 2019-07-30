@@ -1,0 +1,20 @@
+{
+    "name": "@becklyn/translator",
+    "type": "library",
+    "description": "The JS implementation of Symfony's Translator.",
+    "author": "Becklyn Studios <hello@becklyn.com>",
+    "homepage": "https://github.com/Becklyn/translations-bundle",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Becklyn/translations-bundle.git"
+    },
+    "version": "0.0.1",
+    "scripts": {
+        "build": "node_modules/.bin/tsc --noEmitOnError --noErrorTruncation --listEmittedFiles --pretty --noUnusedLocals",
+        "dev": "node_modules/.bin/tsc --noEmitOnError --noErrorTruncation --listEmittedFiles --pretty -w",
+        "prepublishOnly": "npm run-script build"
+    },
+    "devDependencies": {
+        "typescript": "^3.5.3"
+    }
+}
