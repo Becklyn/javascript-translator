@@ -1,6 +1,5 @@
 {
     "name": "@becklyn/translator",
-    "type": "library",
     "description": "The JS implementation of Symfony's Translator.",
     "author": "Becklyn Studios <hello@becklyn.com>",
     "homepage": "https://github.com/Becklyn/translations-bundle",
@@ -14,7 +13,13 @@
         "dev": "node_modules/.bin/tsc --noEmitOnError --noErrorTruncation --listEmittedFiles --pretty -w",
         "prepublishOnly": "npm run-script build"
     },
+    "dependencies": {
+        "@lingui/core": "^2.8.3",
+        "mojave": "^4.4.0"
+    },
     "devDependencies": {
+        "@types/lingui__core": "^2.7.0",
         "typescript": "^3.5.3"
-    }
+    },
+    "type": "library"
 }
