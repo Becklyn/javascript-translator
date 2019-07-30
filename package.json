@@ -2,12 +2,13 @@
     "name": "@becklyn/translator",
     "description": "The JS implementation of Symfony's Translator.",
     "author": "Becklyn Studios <hello@becklyn.com>",
-    "homepage": "https://github.com/Becklyn/translations-bundle",
+    "homepage": "https://github.com/Becklyn/javascript-translator",
     "repository": {
         "type": "git",
-        "url": "git://github.com/Becklyn/translations-bundle.git"
+        "url": "git://github.com/Becklyn/javascript-translator.git"
     },
     "version": "1.0.0",
+    "main": "src/index.js",
     "scripts": {
         "build": "node_modules/.bin/tsc --noEmitOnError --noErrorTruncation --listEmittedFiles --pretty --noUnusedLocals",
         "dev": "node_modules/.bin/tsc --noEmitOnError --noErrorTruncation --listEmittedFiles --pretty -w",
