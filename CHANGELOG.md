@@ -1,3 +1,9 @@
+1.1.0
+=====
+
+*   Made the default domain configurable.
+
+
 1.0.1
 =====
 
