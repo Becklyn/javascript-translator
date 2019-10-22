@@ -1,5 +1,4 @@
 import {I18n, setupI18n} from "@lingui/core";
-import {hasOwnProperty} from "mojave/runtime";
 
 /**
  * Possible values for translation parameters
@@ -57,18 +56,8 @@ export class Translator
 
         for (let domain in catalogue)
         {
-            if (!hasOwnProperty(catalogue, domain))
-            {
-                continue;
-            }
-
             for (let key in catalogue[domain])
             {
-                if (!hasOwnProperty(catalogue[domain], key))
-                {
-                    continue;
-                }
-
                 messages[`${domain}::${key}`] = catalogue[domain][key];
             }
 

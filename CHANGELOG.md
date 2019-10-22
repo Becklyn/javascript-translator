@@ -1,3 +1,9 @@
+1.1.1
+=====
+
+*   Remove dependency on `mojave`.
+
+
 1.1.0
 =====
 

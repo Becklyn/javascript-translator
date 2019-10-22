@@ -15,8 +15,7 @@
         "prepublishOnly": "npm run-script build"
     },
     "dependencies": {
-        "@lingui/core": "^2.8.3",
-        "mojave": "^4.4.0"
+        "@lingui/core": "^2.8.3"
     },
     "devDependencies": {
         "@types/lingui__core": "^2.7.0",
