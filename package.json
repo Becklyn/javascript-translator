@@ -7,7 +7,7 @@
         "type": "git",
         "url": "git://github.com/Becklyn/javascript-translator.git"
     },
-    "version": "1.1.1",
+    "version": "1.1.2",
     "main": "src/index.js",
     "module": "src/index.js",
     "scripts": {
