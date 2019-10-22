@@ -1,3 +1,9 @@
+1.1.2
+=====
+
+*   Add `module` key in `package.json`.
+
+
 1.1.1
 =====
 
