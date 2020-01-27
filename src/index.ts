@@ -14,7 +14,9 @@ interface TranslationParameters
 interface InitCatalogue
 {
     [domain: string]: {
-        [key: string]: string;
+        // The key is either a string or a compiled message.
+        // Strings only work properly in debug mode.
+        [key: string]: any;
     };
 }
 
