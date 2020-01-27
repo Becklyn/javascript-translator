@@ -8,11 +8,12 @@
         "url": "git://github.com/Becklyn/javascript-translator.git"
     },
     "version": "1.1.2",
+    "type": "library",
+    "main": "src/index.js",
+    "module": "src/index.js",
     "bin": {
         "compile-translations": "bin/compile.js"
     },
-    "main": "src/index.js",
-    "module": "src/index.js",
     "scripts": {
         "build": "node_modules/.bin/tsc --noEmitOnError --noErrorTruncation --listEmittedFiles --pretty --noUnusedLocals",
         "dev": "node_modules/.bin/tsc --noEmitOnError --noErrorTruncation --listEmittedFiles --pretty -w",
@@ -31,7 +32,6 @@
         "@types/node": "^13.5.0",
         "typescript": "^3.5.3"
     },
-    "type": "library",
     "engines": {
         "node": ">=10"
     }
