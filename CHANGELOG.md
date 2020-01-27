@@ -1,3 +1,9 @@
+1.2.0
+=====
+
+*   (feature) Add `compile-translations` executable.
+
+
 1.1.2
 =====
 

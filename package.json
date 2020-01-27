@@ -8,6 +8,9 @@
         "url": "git://github.com/Becklyn/javascript-translator.git"
     },
     "version": "1.1.2",
+    "bin": {
+        "compile-translations": "bin/compile.js"
+    },
     "main": "src/index.js",
     "module": "src/index.js",
     "scripts": {
@@ -16,11 +19,20 @@
         "prepublishOnly": "npm run-script build"
     },
     "dependencies": {
-        "@lingui/core": "^2.8.3"
+        "@babel/generator": "^7.8.3",
+        "@babel/types": "^7.8.3",
+        "@lingui/cli": "^2.9.1",
+        "@lingui/core": "^2.8.3",
+        "get-stdin": "^7.0.0"
     },
     "devDependencies": {
+        "@types/babel__generator": "^7.6.1",
         "@types/lingui__core": "^2.7.0",
+        "@types/node": "^13.5.0",
         "typescript": "^3.5.3"
     },
-    "type": "library"
+    "type": "library",
+    "engines": {
+        "node": ">=10"
+    }
 }
