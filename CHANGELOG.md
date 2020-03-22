@@ -1,3 +1,9 @@
+1.3.0
+=====
+
+*   (improvement) Replace `@lingui` with `messageformat`.
+
+
 1.2.0
 =====
 
