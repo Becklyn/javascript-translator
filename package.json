@@ -20,6 +20,7 @@
         "prepublishOnly": "npm run-script build"
     },
     "dependencies": {
+        "@types/node": "^13.9.2",
         "get-stdin": "^7.0.0",
         "messageformat": "^2.3.0"
     },
