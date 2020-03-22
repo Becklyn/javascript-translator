@@ -25,7 +25,7 @@
         "messageformat": "^2.3.0"
     },
     "devDependencies": {
-        "typescript": "^3.5.3"
+        "typescript": "^3.8.3"
     },
     "engines": {
         "node": ">=10"
