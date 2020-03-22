@@ -1,49 +1,17 @@
 #!/usr/bin/env node
 
-import {ObjectProperty} from "@babel/types";
 const getStdin = require('get-stdin');
-const {compile} = require("@lingui/cli/api/compile");
-const generate = require("@babel/generator").default;
-const {objectExpression, objectProperty, stringLiteral} = require("@babel/types");
+const MessageFormat = require("messageformat");
 
-interface Catalog  {
-    [domain: string]: {
-        [key: string]: string;
-    };
-}
 
 (async () =>
 {
     const input = (await getStdin()).trim();
+    let rawCatalog;
 
     try
     {
-        const inputCatalog: Catalog = JSON.parse(input);
-        const compiledDomains: ObjectProperty[] = [];
-
-        for (const domain in inputCatalog)
-        {
-            const compiledProperties: ObjectProperty[] = [];
-
-            for (const key in inputCatalog[domain])
-            {
-                compiledProperties.push(objectProperty(
-                    stringLiteral(key),
-                    compile(inputCatalog[domain][key])
-                ));
-            }
-
-            compiledDomains.push(objectProperty(
-                stringLiteral(domain),
-                objectExpression(compiledProperties)
-            ));
-        }
-
-        const compiled = objectExpression(compiledDomains);
-        console.log(
-            generate(compiled, {minified: true}).code
-        );
-        process.exit(0);
+        rawCatalog = JSON.parse(input);
     }
     catch (e)
     {
@@ -52,6 +20,29 @@ interface Catalog  {
         console.error("");
         console.error("Input was:");
         console.error(input);
+        process.exit(1);
+    }
+
+    try
+    {
+        const messageFormat = new MessageFormat("de");
+        const catalogue = messageFormat.compile(rawCatalog, "de");
+
+        // the only way to get our desired output format is if a dot is in the `global` name.
+        // So we use a object with a property.
+        console.log(`(function(){ 
+var r = {a: {}};
+${catalogue.toString("r.a")};
+return r.a;
+})()`);
+
+        process.exit(0);
+    }
+    catch (e)
+    {
+        console.error(`Compiling the catalogue failed: ${e.message}`);
+        console.error(e);
+        console.error("");
         process.exit(1);
     }
 })();
